@@ -11,11 +11,18 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "Name", nullable = false)
     private String Name;
+    @Column(name = "Email")
     private String email;
+    @Column(name = "Year")
     private LocalDate year;
+    @Column(name = "Age")
     private int age;
+    @Column(name = "Director")
     private String director;
+    @Column(name = "AnimeType")
     private String animeType;
 
     public Book() {
