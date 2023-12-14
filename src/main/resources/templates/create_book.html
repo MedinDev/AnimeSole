@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Create New Book</h1>
+            <div class="card-body">
+                <form th:action="@{/books}" th:object="${book}" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" th:field="*{name}" class="form-control"
+                               placeholder="Enter Book Name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" th:field="*{email}" class="form-control"
+                               placeholder="Enter your Email"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" th:field="*{year}" class="form-control"
+                               placeholder="Enter the years"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" th:field="*{age}" class="form-control"
+                               placeholder="Enter your age"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="director">Director</label>
+                        <input type="text" id="director" name="director" th:field="*{director}"
+                               class="form-control"
+                               placeholder="Enter your director"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="animeType">Anime Type</label>
+                        <input type="text" id="animeType" name="animeType" th:field="*{animeType}"
+                               class="form-control"
+                               placeholder="Enter your anime"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

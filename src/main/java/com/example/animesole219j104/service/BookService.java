@@ -7,11 +7,11 @@ import java.util.List;
 public interface BookService {
     List<Book> getAllBooks();
 
-    Book saveBook(Book Book);
+    Book saveBook(Book book);
 
     Book getBookById(Long id);
 
-    Book updateBook(Book Book);
+    Book updateBook(Book book);
 
     void deleteBookById(Long id);
 }

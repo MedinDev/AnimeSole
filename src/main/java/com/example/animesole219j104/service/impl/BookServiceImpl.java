@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     public BookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -22,22 +22,25 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book saveBook(Book Book) {
-        return null;
+    public Book saveBook(Book book) {
+        return
+                bookRepository.save(book);
     }
 
     @Override
     public Book getBookById(Long id) {
-        return null;
+        return bookRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
     }
 
+
     @Override
-    public Book updateBook(Book Book) {
-        return null;
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
     }
 
     @Override
     public void deleteBookById(Long id) {
-
+        bookRepository.deleteById(id);
     }
 }

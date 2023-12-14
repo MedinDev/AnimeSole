@@ -2,7 +2,6 @@ package com.example.animesole219j104.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "views")
@@ -13,15 +12,20 @@ public class Book {
     private Long id;
 
     @Column(name = "Name", nullable = false)
-    private String Name;
+    private String name;
+
     @Column(name = "Email")
     private String email;
+
     @Column(name = "Year")
-    private LocalDate year;
+    private String year;
+
     @Column(name = "Age")
     private int age;
+
     @Column(name = "Director")
     private String director;
+
     @Column(name = "AnimeType")
     private String animeType;
 
@@ -29,8 +33,9 @@ public class Book {
 
     }
 
-    public Book(String name, String email, LocalDate year, int age, String director, String animeType) {
-        Name = name;
+    public Book(String name, String email, String year, int age, String director, String animeType) {
+        super();
+        this.name = name;
         this.email = email;
         this.year = year;
         this.age = age;
@@ -47,11 +52,11 @@ public class Book {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEmail() {
@@ -62,11 +67,11 @@ public class Book {
         this.email = email;
     }
 
-    public LocalDate getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(LocalDate year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
